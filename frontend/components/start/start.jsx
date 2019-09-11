@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Start = ({ currentUser, logout }) => {
     const getSignIn = () => (
         <nav className='getSignIn'>
-            <Link to='/login'>SIGN IN</Link>
+            <Link to='/signin'>SIGN IN</Link>
         </nav>
     );
 

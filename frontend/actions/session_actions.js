@@ -22,16 +22,16 @@ const receiveErrors = (errors) => ({
 
 })
 
-export const signup = user => dispatch => (
-    UserAPIUtil.signup(user).then(user => (
+export const joinnow = user => dispatch => (
+    UserAPIUtil.joinnow(user).then(user => (
         dispatch(receiveCurrentUser(user))
     ), err => ( 
         dispatch(receiveErrors(err.responseJSON))
     ))
 );
 
-export const login = user => dispatch => (
-    UserAPIUtil.login(user).then(user => (
+export const signin = user => dispatch => (
+    UserAPIUtil.signin(user).then(user => (
         dispatch(receiveCurrentUser(user))
     ), err => (
         dispatch(receiveErrors(err.responseJSON))
