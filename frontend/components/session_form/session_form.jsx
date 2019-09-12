@@ -9,7 +9,7 @@ class SessionForm extends React.Component {
             email: '',
             password: '',
             month: '',
-            date: '',
+            day: '',
             year: ''
         };
 
@@ -25,15 +25,61 @@ class SessionForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
+        console.log('im in the handle submit')
         this.props.processForm(user)
     }
 
+    renderErrors(){
+        return( 
+            <ul className ='render-errors'>
+                {this.props.errors.map((error, i) =>
+                <li key={`error-${i}`}>
+                    {error}
+                </li>  
+                    )}
+            </ul>
+        )
+    }
+
+    signUpBirthday(){
+        return(
+            <label> BIRTHDAY
+                                <input
+                    type='text'
+                    value={this.state.month}
+                    onChange={this.update('month')}
+                />
+                <input
+                    type='text'
+                    value={this.state.day}
+                    onChange={this.update('day')}
+                />
+                <input
+                    type='text'
+                    value={this.state.year}
+                    onChange={this.update('year')}
+                />
+            </label>
+        )
+    }
+
+    demoUser() {
+        const demoUser = { email: 'rrr', password: '123456' }
+        return (
+            <button className="demo-user" onClick={(e) => {
+                e.preventDefault()
+                return this.props.processForm(demoUser)
+            }}>Demo User</button>
+        )
+    }
+
     render(){
-        if (this.props.formType === 'signin') {
+        console.log(this.props.end)
             return(
                 <div>
-                    <h3>Sign in for a better experience</h3>
+                    { <h3>{this.props.headerText}</h3>}
                     <form onSubmit={this.handleSubmit} className="login-form-box">
+                        {this.renderErrors()}
                         <div className="login-form"> 
                             <label> EMAIL ADDRESS
                                 <input 
@@ -49,54 +95,14 @@ class SessionForm extends React.Component {
                                     onChange={this.update('password')}
                                 />
                             </label>
-                            <input type='submit' value='Sign In'/>
-                            <h3>{this.props.switchLink}</h3>
+                            {this.props.formType === 'joinnow' ? this.signUpBirthday() : null}
+                            <input type='submit' value={this.props.buttonText}/>
+                            {this.demoUser() }
+                            <h3>{this.props.endLink}</h3>
                         </div>
                     </form>
                 </div>
-            )} else {
-            return (
-            <div>
-                <h3>Buy Less. Wear More. 20% Off or $80 Off Unlimited Trial</h3>
-                <form onSubmit={this.handleSubmit} className="login-form-box">
-                    <div className="login-form">
-                        <label> EMAIL ADDRESS
-                                <input
-                                type='text'
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                            />
-                        </label>
-                        <label> PASSWORD
-                                <input
-                                type='password'
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                            />
-                        </label>
-                        <label> BIRTHDAY
-                                <input
-                                type='text'
-                                value={this.state.month}
-                                onChange={this.update('month')}  
-                            />
-                            <input
-                                type='text'
-                                value={this.state.day}
-                                onChange={this.update('day')}
-                            />
-                            <input
-                                type='text'
-                                value={this.state.year}
-                                onChange={this.update('year')}
-                            />
-                        </label>
-                        <input type='submit' value='Sign In' />
-                    </div>
-                    <h3>{this.props.switchLink}</h3>
-                </form>
-            </div>
-            )}
+            )
     }
 }
 export default SessionForm;

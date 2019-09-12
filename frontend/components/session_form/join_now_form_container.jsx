@@ -8,11 +8,9 @@ const mapStateToProps = ({ errors }) => {
     return ({
         errors: errors.session,
         formType: 'joinnow',
-        switchLink: <Link to="/signin">ALREADY HAVE AN ACCOUT? SIGN IN.</Link>,
-        month: '',
-        day: '',
-        year: ''
-
+        headerText: 'Buy Less. Wear More. 20% Off or $80 Off Unlimited Trial',
+        buttonText: 'UNLOCK MY OFFER',
+        endLink: <Link to="/signin">ALREADY HAVE AN ACCOUT? SIGN IN.</Link>
     })
 }
 
