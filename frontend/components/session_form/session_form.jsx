@@ -25,8 +25,7 @@ class SessionForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        console.log('im in the handle submit')
-        this.props.processForm(user)
+        this.props.processForm(user).then(this.props.closeModal);
     }
 
     renderErrors(){
@@ -68,7 +67,7 @@ class SessionForm extends React.Component {
         return (
             <button className="demo-user" onClick={(e) => {
                 e.preventDefault()
-                return this.props.processForm(demoUser)
+                return this.props.processForm(demoUser).then(this.props.closeModal);
             }}>Demo User</button>
         )
     }
@@ -79,6 +78,7 @@ class SessionForm extends React.Component {
                 <div>
                     { <h3>{this.props.headerText}</h3>}
                     <form onSubmit={this.handleSubmit} className="login-form-box">
+                        <div onClick={this.props.closeModal} className="close-x">X</div>
                         {this.renderErrors()}
                         <div className="login-form"> 
                             <label> EMAIL ADDRESS
@@ -97,8 +97,8 @@ class SessionForm extends React.Component {
                             </label>
                             {this.props.formType === 'joinnow' ? this.signUpBirthday() : null}
                             <input type='submit' value={this.props.buttonText}/>
-                            {this.demoUser() }
-                            <h3>{this.props.endLink}</h3>
+                            {this.props.formType === 'signin' ? this.demoUser() : null }
+                            {this.props.otherForm}
                         </div>
                     </form>
                 </div>

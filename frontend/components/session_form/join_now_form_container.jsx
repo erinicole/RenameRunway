@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import { joinnow } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
-import { joinnow } from '../../actions/session_actions'
-import SessionForm from './session_form'
+import { openModal, closeModal } from '../../actions/modal_actions';
+import SessionForm from './session_form';
+
 
 const mapStateToProps = ({ errors }) => {
     return ({
@@ -16,7 +18,19 @@ const mapStateToProps = ({ errors }) => {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        processForm: (user) => dispatch(joinnow(user))
+        processForm: (user) => dispatch(joinnow(user)),
+        otherForm: (
+            <button onClick={(e) => {
+                e.preventDefault();
+                return (
+                    dispatch(openModal('signin'))
+                )
+            }
+            }>
+                ALREADY HAVE AN ACCOUT? SIGN IN
+            </button>
+        ),
+        closeModal: () => dispatch(closeModal())
     })
 }
 

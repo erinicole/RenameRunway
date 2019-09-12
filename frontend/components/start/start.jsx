@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Start = ({ currentUser, logout }) => {
+const Start = ({ currentUser, logout, openModal }) => {
+    
+    <div className='nav-bar-link'>CLOTHING</div>
     const getSignIn = () => (
         <nav className='getSignIn'>
-            <Link to='/signin'>SIGN IN</Link>
+            <button onClick={() => openModal('signin')}>SIGN IN</button>
         </nav>
     );
 
@@ -14,7 +16,13 @@ const Start = ({ currentUser, logout }) => {
         </nav>
     );
     
-    return currentUser ? alreadySignedIn() : getSignIn();
+    return( 
+        <div className='nav-bar'>
+            <div className='nav-bar-link'>CLOTHING</div>
+            {currentUser ? alreadySignedIn() : getSignIn()}
+        </div >
+
+    )
 }
 
 export default Start
