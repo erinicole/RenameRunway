@@ -1,0 +1,63 @@
+.splash-all{
+}
+
+.splash-hero {
+    position: relative;
+    height: 1000px;
+    width: 100%;
+    background: url("hero.jpg");
+    background-size: cover;
+    justify-content: space-between;
+    align-items: center;
+    // margin: 50px;
+}
+
+.splash-hero-h1{
+    color: white;
+    font-size: 50px;
+    text-shadow: 2px 2px #989898bd;
+    font-weight: bold;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.splash-hero-h3{
+    color: white;
+    font-size: 18px;
+    font-weight: bold ;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.splash-row-category {
+    position: relative;
+    display: flex;
+    margin: 50px;
+}
+
+.splash-cat1{
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    height: 1000px;
+    width: 48%;
+    background: url("coat.png");
+    background-size: cover;
+    margin-right: 7px;
+    margin-left: 50px;
+}
+
+.splash-cat2{
+    position: absolute;
+    right: 0;
+    height: 1000px;
+    width: 48%;
+    background: url("dress.jpg");
+    background-size: cover;
+    overflow: hidden;
+    margin-right: 7px;
+    margin-left: 50px;
+
+
+}
+
+
+

@@ -40,67 +40,94 @@ class SessionForm extends React.Component {
         )
     }
 
-    signUpBirthday(){
+    signInNormal(){
         return(
-            <label> BIRTHDAY
-                                <input
-                    type='text'
-                    value={this.state.month}
-                    onChange={this.update('month')}
-                />
-                <input
-                    type='text'
-                    value={this.state.day}
-                    onChange={this.update('day')}
-                />
-                <input
-                    type='text'
-                    value={this.state.year}
-                    onChange={this.update('year')}
+            <label className='session-label'> PASSWORD
+                    <input className='session-input'
+                    type='password'
+                    value={this.state.password}
+                    onChange={this.update('password')}
                 />
             </label>
+        )
+    }
+
+    signUpBirthday(){
+        return(
+            
+            <div className='session-bday-label'>
+                <label > CREATE A PASSWORD
+                                <input id='bday-password-input'
+                        type='password'
+                        value={this.state.password}
+                        onChange={this.update('password')}
+                    />
+                </label>
+                <label > BIRTHDAY
+                                    <input id='bday-box-input'
+                        type='text'
+                        value={this.state.month}
+                        onChange={this.update('month')}
+                    />
+                </label> 
+                <label > 
+                    <input id='bday-box-input'
+                        type='text'
+                        value={this.state.day}
+                        onChange={this.update('day')}
+                    />
+                </label>
+                <label > 
+                    <input id='bday-box-input'
+                        type='text'
+                        value={this.state.year}
+                        onChange={this.update('year')}
+                    />
+                </label>
+            </div>
         )
     }
 
     demoUser() {
         const demoUser = { email: 'rrr', password: '123456' }
         return (
-            <button className="demo-user" onClick={(e) => {
+            <button className='demo-singin' onClick={(e) => {
                 e.preventDefault()
                 return this.props.processForm(demoUser).then(this.props.closeModal);
-            }}>Demo User</button>
+            }}>DEMO USER</button>
         )
     }
 
     render(){
         console.log(this.props.end)
             return(
-                <div>
-                    { <h3>{this.props.headerText}</h3>}
-                    <form onSubmit={this.handleSubmit} className="login-form-box">
-                        <div onClick={this.props.closeModal} className="close-x">X</div>
+                <div className='session-form'>
+                    <div className='login-form-box'>
+                        <div className="close-x">
+                            <div onClick={this.props.closeModal} >X</div>
+                        </div>
+                        <div className='session-form-content'>
+                        <div className='session-header-text'>
+                        <h3 >{this.props.headerText}</h3>
+                        </div>
                         {this.renderErrors()}
-                        <div className="login-form"> 
-                            <label> EMAIL ADDRESS
-                                <input 
+                            <form onSubmit={this.handleSubmit} className="login-form">
+                            <label className='session-label'> EMAIL ADDRESS
+                                <input className='session-input'
                                     type='text' 
                                     value={this.state.email} 
                                     onChange={this.update('email')}
                                 />
                             </label>
-                            <label> PASSWORD
-                                <input
-                                    type='password'
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
-                                />
-                            </label>
-                            {this.props.formType === 'joinnow' ? this.signUpBirthday() : null}
-                            <input type='submit' value={this.props.buttonText}/>
+
+                            {this.props.formType === 'joinnow' ? this.signUpBirthday() : this.signInNormal()}
+                            <input type='submit' value={this.props.buttonText} className='session-singin'/>
+                    </form>
+                            <div className='session-line'> <span className='session-line-span'>OR</span> </div>
                             {this.props.formType === 'signin' ? this.demoUser() : null }
                             {this.props.otherForm}
                         </div>
-                    </form>
+                    </div>
                 </div>
             )
     }

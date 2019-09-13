@@ -11,7 +11,6 @@ const mapStateToProps = ({ errors }) => {
         formType: 'signin',
         headerText: 'Sign in for a better experience',
         buttonText: 'SIGN IN',
-        endLink: <Link to="/joinnow">DON'T HAVE AN ACCOUNT? JOIN NOW</Link>
     })
 }
 
@@ -19,7 +18,7 @@ const mapDispatchToProps = dispatch => {
     return ({
         processForm: (user) => dispatch(signin(user)),
         otherForm: (
-            <button onClick={(e) => { 
+            <button className='session-button' onClick={(e) => { 
                 e.preventDefault();
                 return( 
                     dispatch(openModal('joinnow')) 

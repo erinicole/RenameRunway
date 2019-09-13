@@ -10,9 +10,8 @@ const mapStateToProps = ({ errors }) => {
     return ({
         errors: errors.session,
         formType: 'joinnow',
-        headerText: 'Buy Less. Wear More. 20% Off or $80 Off Unlimited Trial',
+        headerText: (<span>Buy Less. Wear More. {<br />} 20% Off or $80 Off Unlimited Trial' </span>),
         buttonText: 'UNLOCK MY OFFER',
-        endLink: <Link to="/signin">ALREADY HAVE AN ACCOUT? SIGN IN.</Link>
     })
 }
 
@@ -20,7 +19,7 @@ const mapDispatchToProps = dispatch => {
     return ({
         processForm: (user) => dispatch(joinnow(user)),
         otherForm: (
-            <button onClick={(e) => {
+            <button className='session-button' onClick={(e) => {
                 e.preventDefault();
                 return (
                     dispatch(openModal('signin'))
