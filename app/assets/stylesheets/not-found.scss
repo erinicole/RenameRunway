@@ -1,0 +1,50 @@
+.not-found-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background: #f3ede6;
+}
+
+.not-found-image{
+    margin-top: 150px;
+    background-position: center;
+    height: 200px;
+    width: 200px;
+    background: url("RCWP.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.not-found-h1{
+    font-size: 40px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: bolder;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.not-found-p{
+    font-size: 20px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.not-found-link{
+  text-decoration: none;
+  color: white;
+  display: block;
+  font-family: 'Quicksand', sans-serif;
+  background: #333333;
+  width: 302px;
+  height: 32px;
+  text-align: center;
+  padding-top: 12px;
+  margin-bottom: 150px;
+}
+
+.not-found-link:hover{
+    background: #595857;
+}
