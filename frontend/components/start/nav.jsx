@@ -15,18 +15,20 @@ const Nav = ({ currentUser, logout, openModal }) => {
     );
     
     return( 
-        <div className='nav-bar'>
+        <div className='nav-bar' id='nav-bar'>
             <div className='nav-icon'></div>
-            <div className='nav-cat-links'>
-                <div>CLOTHING</div>
-                <div>ACCESSORIES</div>
-                <div>DESIGNERS</div>
-                <div>FALL ITEMS</div>
-            </div>
-            <div className='nav-search'> </div>
-            <div className='nav-user-menu'> 
-                {currentUser ? alreadySignedIn() : getSignIn()}
-                <div className='nav-linkedin'> </div>
+            <div className='nav-links-container'>
+                <div className='nav-cat-links' >
+                    <div>CLOTHING</div>
+                    <div>ACCESSORIES</div>
+                    <div>DESIGNERS</div>
+                    <div>FALL ITEMS</div>
+                </div>
+                <div className='nav-search'> </div>
+                <div className='nav-user-menu'> 
+                    {currentUser ? alreadySignedIn() : getSignIn()}
+                    <div className='nav-linkedin'> LINK TO LINKEDIN </div>
+                </div>
             </div>
 
         </div >

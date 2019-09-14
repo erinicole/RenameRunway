@@ -1,0 +1,61 @@
+.nav-bar{
+    display: flex;
+    height: 50px;
+    // justify-content: space-between;
+    align-items: flex-start;
+    // margin: 10px, 35px, 10px, 35px;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+
+}
+
+.nav-icon{
+    background-position: center;
+    height: 45px;
+    width: 45px;
+    background: url("RCWP.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.nav-links-container{
+    display: flex;
+    // justify-content: space-around;
+    align-items: flex-end;
+    width: 100%
+}
+
+.nav-cat-links{
+    display: flex;
+    justify-content: space-around;
+    width: 700px;    
+}
+
+.nav-search{
+    background-position: center;
+    height: 40px;
+    width: 40px;
+    background: url("search.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.nav-user-menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px; 
+    margin-left: 112px;
+}
+
+.nav-linkedin{
+    color: #966034;
+    width: 182px;
+    height: 47px;
+    border: 1px solid #c7a279;
+    text-align: center;
+}

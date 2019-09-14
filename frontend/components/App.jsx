@@ -10,7 +10,6 @@ import NotFound from "./session_form/not_found";
 const App = () => (
     <div>
         < Modal />
-        <h1>Pockets</h1>
         <nav>
             <NavContainer />
         </nav>
