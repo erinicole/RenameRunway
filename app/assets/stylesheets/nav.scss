@@ -14,15 +14,15 @@
 }
 
 .nav-icon{
-    background-position: center;
+    // background-position: center;
     height: 45px;
     width: 45px;
-    background: url("RCWP.png"); 
-    background-size: contain;
-    background-repeat: no-repeat;
+    // background: url("RCWP.png"); 
+    // background-size: contain;
+    // background-repeat: no-repeat;
 }
 
-.nav-links-container{
+.nav-container{
     display: flex;
     // justify-content: space-around;
     align-items: flex-end;
@@ -48,8 +48,13 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 300px; 
+    width:500px; 
     margin-left: 112px;
+}
+
+.nav-heart-icon{
+    height: 45px;
+    width: 45px;
 }
 
 .nav-linkedin{
@@ -58,4 +63,20 @@
     height: 47px;
     border: 1px solid #c7a279;
     text-align: center;
+}
+
+.nav-person-icon{
+    height: 45px;
+    width: 45px;
+}
+
+.nav-logout{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.nav-shopping-bag{
+    height: 45px;
+    width: 45px;
 }

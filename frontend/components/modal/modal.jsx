@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import SignInFormContainer from '../session_form/sign_in_form_container';
@@ -6,6 +6,7 @@ import JoinNowFormContainer from '../session_form/join_now_form_container';
 
 
 const Modal = ({modal, closeModal}) => {
+    
     if (!modal){
         return null;
     }
@@ -20,7 +21,21 @@ const Modal = ({modal, closeModal}) => {
         default:
             return null;
     }
+
+    // useEffect(() => {
+    //     document.body.style.overflow = 'hidden'
+    //     return () => document.body.style.overflow = 'unset'
+    // });
+
+//     componentDidMount() {
+//     document.body.style.overflow = 'hidden';
+// }
+// componentWillUnmount() {
+//     document.body.style.overflow = 'unset';
+// }
+
     return (
+
         <div className='modal-background' onClick={closeModal}>
             <div className='modal=child' onClick={e => e.stopPropagation()}>
                 {component}
