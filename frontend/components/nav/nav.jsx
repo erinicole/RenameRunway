@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './nav_logout_dropdown';
 import NavSignIn from './nav_sign_in'
 
 const Nav = ({ currentUser, logout, openModal }) => {
@@ -10,10 +9,6 @@ const Nav = ({ currentUser, logout, openModal }) => {
         </nav>
     );
 
-    const alreadySignedIn = () => (
-        
-        <NavSignIn />
-    );
     
     return( 
         <div className='nav-bar' id='nav-bar'>
