@@ -2,7 +2,7 @@
     display: flex;
     height: 50px;
     // justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     // margin: 10px, 35px, 10px, 35px;
     margin-left: 35px;
     margin-right: 35px;
@@ -25,7 +25,7 @@
 .nav-container{
     display: flex;
     // justify-content: space-around;
-    align-items: flex-end;
+    align-items: center;
     width: 100%
 }
 
@@ -37,8 +37,8 @@
 
 .nav-search{
     background-position: center;
-    height: 40px;
-    width: 40px;
+    height: 22px;
+    width: 22px;
     background: url("search.png"); 
     background-size: contain;
     background-repeat: no-repeat;
@@ -53,8 +53,8 @@
 }
 
 .nav-heart-icon{
-    height: 45px;
-    width: 45px;
+    height: 22px;
+    width: 22px;
 }
 
 .nav-linkedin{
@@ -66,8 +66,8 @@
 }
 
 .nav-person-icon{
-    height: 45px;
-    width: 45px;
+    height:24px;
+    width: 23px;
 }
 
 .nav-logout{
@@ -77,6 +77,6 @@
 }
 
 .nav-shopping-bag{
-    height: 45px;
-    width: 45px;
+    height: 24px;
+    width: 22px;
 }
