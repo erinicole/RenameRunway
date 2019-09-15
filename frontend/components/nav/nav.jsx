@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './nav_logout_dropdown';
+import NavSignIn from './nav_sign_in'
 
 const Nav = ({ currentUser, logout, openModal }) => {
     const getSignIn = () => (
@@ -9,12 +11,8 @@ const Nav = ({ currentUser, logout, openModal }) => {
     );
 
     const alreadySignedIn = () => (
-        <div className='nav-logout'>
-            <img className='nav-person-icon' src='../../assets/profile.png' alt='person icon'/>
-            <nav className='alreadySignedIn'>
-                <button className="user-info-dropdown" onClick={logout}>Log Out</button>
-            </nav>
-        </div>
+        
+        <NavSignIn />
     );
     
     return( 
@@ -29,7 +27,7 @@ const Nav = ({ currentUser, logout, openModal }) => {
                 </div>
                 <div className='nav-search'> </div>
                 <div className='nav-user-menu'> 
-                    {currentUser ? alreadySignedIn() : getSignIn()}
+                    {currentUser ? <NavSignIn /> : getSignIn()}
                     <img className='nav-heart-icon' src='../../assets/heart.png' alt='heart' />
                     {currentUser ? <img className='nav-shopping-bag' src='../../assets/shopping-bag.png'  alt='shopping bag'/> : null }
                     <div className='nav-linkedin'> LINK TO LINKEDIN </div>
