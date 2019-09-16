@@ -31,22 +31,20 @@
 
 .splash-category-pics{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .splash-cat1-pic{
     height: 800px;
     width: 700px;
-    margin-right: 10px;
-    margin-left: 120px;
+    margin-right: 15px;
 }
 
 .splash-cat2-pic{
     height: 800px;
     width: 700px;
-    margin-left: 10px;
-    margin-right: 120px;
+    margin-left: 15px;
 }
 
 .splash-category-description{
@@ -55,20 +53,15 @@
     text-align: center;
 }
 
-.splash-cat1-descrip{
-    margin-left: 270px;
-}
-
-.splash-cat2-descrip{
-    margin-right: 270px;
-}
 
 .splash-h1{
     font-family: 'Nanum Myeongjo', serif;
     font-size: 40px;
+    text-align: center;
 }
 
 .splash-h2{
     font-family: 'Quicksand', sans-serif;
     font-size: 20px;
+    text-align: center;
 }

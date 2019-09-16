@@ -24,15 +24,13 @@ const Splash = () => {
             </div>
 
             <div className='splash-category-pics' >
-                <img className='splash-cat1-pic' src={window.images.coat} alt='coat with pockets' />
-                <img className='splash-cat2-pic' src={window.images.dress_two} alt='dress with pockets' />
-            </div>
-            <div className='splash-category-description' >
-                <div className='splash-cat1-descrip'>
+                <div>
+                    <img className='splash-cat1-pic' src={window.images.coat} alt='coat with pockets' />
                     <p className='splash-h1'> Winter Is Coming</p>
                     <p className='splash-h2'> Coats Worthy of Daenerys </p>
                 </div>
-                <div className='splash-cat2-descrip'>
+                <div>
+                    <img className='splash-cat2-pic' src={window.images.dress_two} alt='dress with pockets' />
                     <p className='splash-h1'> Office Top Trends</p>
                     <p className='splash-h2'> Keep Your Hands Warm </p>
                 </div>
