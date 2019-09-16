@@ -1,8 +1,7 @@
-export const fetchProducts = data => (
+export const fetchProducts = () => (
     $.ajax({
         method: 'GET',
-        url: 'api/products',
-        data
+        url: 'api/products'
     })
 )
 
