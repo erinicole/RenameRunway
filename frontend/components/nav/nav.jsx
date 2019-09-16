@@ -16,7 +16,7 @@ const Nav = ({ currentUser, logout, openModal }) => {
     return (
         <div className='nav-bar' id='nav-bar'>
             <Link to='/'>
-                <img className='nav-icon' src='../../assets/RCWP.png' alt='RCWB logo' />
+                <img className='nav-icon' src={window.images.RCWP} alt='RCWB logo' />
             </Link>
             <div className='nav-container' >
                 <div className='nav-part-1'>
@@ -24,13 +24,13 @@ const Nav = ({ currentUser, logout, openModal }) => {
                     <div className='cat-link'>ACCESSORIES</div>
                     <div className='cat-link'>DESIGNERS</div>
                     <div className='cat-link'>FALL ITEMS</div>
-                    <div className='nav-search'> </div>
+                    <div className='nav-link'> <img className='nav-search'src={window.images.search} /> </div>
                 </div>
                 <div className='nav-part-2'>
                     <div className='nav-user-menu'>
                         {currentUser ? <NavSignIn /> : getSignIn()}
-                        <img className='nav-heart-icon' src='../../assets/heart.png' alt='heart' />
-                        {currentUser ? <img className='nav-shopping-bag' src='../../assets/shopping-bag.png' alt='shopping bag' /> : null}
+                        <img className='nav-heart-icon' src={window.images.heart} />
+                        {currentUser ? <img className='nav-shopping-bag' src={window.images.shopping_bag} alt='shopping bag' /> : null}
                         <a href='https://www.linkedin.com/in/erinicole1988/' target='_blank' className='a-link'>
                             <div className='nav-linkedin'>
                                 <p className='nav-linkedin-bold' > LIMITED TIME ONLY </p>

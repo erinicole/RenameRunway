@@ -24,8 +24,8 @@ const Splash = () => {
             </div>
 
             <div className='splash-category-pics' >
-                <img className='splash-cat1-pic' src='../../assets/coat.png' alt='coat with pockets' />
-                <img className='splash-cat2-pic' src='../../assets/dress-two.jpg' alt='dress with pockets' />
+                <img className='splash-cat1-pic' src={window.images.coat} alt='coat with pockets' />
+                <img className='splash-cat2-pic' src={window.images.dress_two} alt='dress with pockets' />
             </div>
             <div className='splash-category-description' >
                 <div className='splash-cat1-descrip'>

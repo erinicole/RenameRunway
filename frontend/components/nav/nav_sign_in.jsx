@@ -27,7 +27,7 @@ const NavSignedIn = () => {
         >
             <img id="person-dropdown-btn"
                 className='nav-person-icon'
-                src='../../assets/profile.png'
+                src={window.images.profile}
                 alt='person icon'
             />
 
