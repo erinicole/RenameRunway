@@ -1,0 +1,48 @@
+
+.nav-logout-dropdown {
+	position: absolute;
+	top: 60px;
+	right: 230px;
+	// right: 0;
+	background-color: #fff;
+	border: 1px solid #c5c5c5;
+	padding: 10px;
+	width: 125px;
+	z-index: 1;
+	color: black;
+  	font-family: 'Quicksand', sans-serif;
+	text-align: left;
+	// box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+	font-weight: initial;
+}
+
+.nav-logout:hover {
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+
+.nav-logout-dropdown li {
+	list-style: none;	
+	margin: 5px 0;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.account-underline{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #c5c5c5;
+}
+
+.nav-logout-dropdown a {
+	display: block;
+	padding: 5px 5px;
+}
+
+
+
+
+

@@ -22,17 +22,6 @@ const Modal = ({modal, closeModal}) => {
             return null;
     }
 
-    // useEffect(() => {
-    //     document.body.style.overflow = 'hidden'
-    //     return () => document.body.style.overflow = 'unset'
-    // });
-
-//     componentDidMount() {
-//     document.body.style.overflow = 'hidden';
-// }
-// componentWillUnmount() {
-//     document.body.style.overflow = 'unset';
-// }
 
     return (
 

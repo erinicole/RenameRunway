@@ -110,10 +110,12 @@
 
 input[type='submit'].session-singin:hover {
   background: #333333;
+  cursor: pointer;
 }
 
 .demo-singin:hover{
     background: #6579aa;
+    cursor: pointer;
 }
 
 #bday-password-input{
@@ -196,4 +198,12 @@ input[type='submit'].session-singin:hover {
   font-size: 12px;
   font-weight: bolder;
 
+}
+
+.session-button:hover {
+  cursor: pointer;
+}
+
+.close-x:hover{
+  cursor: pointer;
 }

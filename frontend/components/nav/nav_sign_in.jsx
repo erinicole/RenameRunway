@@ -33,8 +33,8 @@ const NavSignedIn = () => {
 
             <nav id="nav-logout-dropdown" className={"nav-logout-dropdown " + (hidden ? 'hidden' : '')}>
                 <ul >
-                    <li> MY ACCOUNT </li>
-                    <li> <button className="user-info-dropdown" onClick={logoutHandler}>Log Out</button></li>
+                    <li className='account-underline'> MY ACCOUNT </li>
+                    <li> <button className="user-info-dropdown" onClick={logoutHandler}>SIGN OUT</button></li>
                 </ul>
             </nav>
         </div>
