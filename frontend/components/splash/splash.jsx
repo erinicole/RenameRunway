@@ -7,9 +7,9 @@ const Splash = () => {
             <div className='splash-hero'>
                 <h1 className='splash-hero-h1'>
                     <span >
-                        The Search for Pockets
+                        Our Motto is Pockets
                         <br/>
-                        Is Finally Over
+                        or it Didn't Happen
                     </span>
                 </h1>
                 <h3 className='splash-hero-h3'>
@@ -30,11 +30,11 @@ const Splash = () => {
             <div className='splash-category-description' >
                 <div className='splash-cat1-descrip'>
                     <p className='splash-h1'> Winter Is Coming</p>
-                    <p className='splash-h2'> Be Daenerys </p>
+                    <p className='splash-h2'> Coats Worthy of Daenerys </p>
                 </div>
                 <div className='splash-cat2-descrip'>
                     <p className='splash-h1'> Office Top Trends</p>
-                    <p className='splash-h2'> Try Them All</p>
+                    <p className='splash-h2'> Keep Your Hands Warm </p>
                 </div>
             </div>
         </div>

@@ -6,20 +6,6 @@ import NavSignIn from './nav_sign_in'
 
 const Nav = ({ currentUser, logout, openModal }) => {
 
-    // window.onscroll = function () { myFunction() };
-
-    // const header = document.getElementById("nav-barr");
-    // const sticky = header.offsetTop;
-
-    // function myFunction() {
-    //     if (window.pageYOffset > sticky) {
-    //         header.classList.add("sticky");
-    //     } else {
-    //         header.classList.remove("sticky");
-    //     }
-    // }
-
-
     const getSignIn = () => (
         <div >
             <button className='nav-sign-in' onClick={() => openModal('signin')}>SIGN IN</button>

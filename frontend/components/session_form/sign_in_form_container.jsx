@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { signin } from '../../actions/session_actions'
+import { signin, clearErrors } from '../../actions/session_actions'
 import {Link} from 'react-router-dom'
 import { openModal, closeModal } from '../../actions/modal_actions';
 import SessionForm from './session_form'
@@ -27,7 +27,8 @@ const mapDispatchToProps = dispatch => {
                 DON'T HAVE AN ACCOUNT? JOIN NOW
             </button>
         ),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        clearErrors: () => dispatch(clearErrors())
     })
 }
 

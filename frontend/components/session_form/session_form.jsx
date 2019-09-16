@@ -88,6 +88,10 @@ class SessionForm extends React.Component {
         )
     }
 
+    componentDidMount(){
+        this.props.clearErrors();
+    }
+
     demoUser() {
         const demoUser = { email: 'rrr', password: '123456' }
         return (
@@ -113,7 +117,9 @@ class SessionForm extends React.Component {
                         {this.renderErrors()}
                             <form onSubmit={this.handleSubmit} className="login-form">
                             <label className='session-label'> EMAIL ADDRESS
-                                <input className={this.props.errors.length === 0 ? 'session-input' : 'session-input-error'}
+                                {/* <input className={this.props.errors.length === 0 ? 'session-input' : 'session-input-error'} */}
+                                <input className='session-input'
+
                                     type='text' 
                                     value={this.state.email} 
                                     onChange={this.update('email')}
