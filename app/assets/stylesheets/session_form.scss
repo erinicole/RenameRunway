@@ -96,6 +96,20 @@
 
 }
 
+.session-input-error{
+  display: block;
+  background: #e8f0fe;
+  border: 1px solid red;
+  width: 365px;
+  height: 44px;
+  padding-top: 5px, 10px;
+  font-size: 15px;
+  font-family: serif;
+  font-weight: 400;
+  padding-left: 12px;
+
+}
+
 .session-input:focus {
   border: 1px solid black;
 }

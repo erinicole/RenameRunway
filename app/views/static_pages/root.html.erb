@@ -1,2 +1,12 @@
 <%#this is so we can show components through this one view %>
 <main id='root'></main>
+
+<% if logged_in? %>
+  <script type="text/javascript">
+    window.currentUser = <%= render(
+      "api/users/user.json.jbuilder",
+      user: current_user
+    ).html_safe %></script>
+<% end %>
+
+<main id="root"></main>

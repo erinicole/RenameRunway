@@ -10,7 +10,7 @@ const mapStateToProps = ({ errors }) => {
     return ({
         errors: errors.session,
         formType: 'joinnow',
-        headerText: (<span>Buy Less. Wear More. {<br />} 20% Off or $80 Off Unlimited Trial' </span>),
+        headerText: (<span>Buy Less. Wear More. {<br />} 20% Off or $80 Off Unlimited Trial </span>),
         buttonText: 'UNLOCK MY OFFER',
     })
 }

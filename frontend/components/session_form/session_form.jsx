@@ -113,7 +113,7 @@ class SessionForm extends React.Component {
                         {this.renderErrors()}
                             <form onSubmit={this.handleSubmit} className="login-form">
                             <label className='session-label'> EMAIL ADDRESS
-                                <input className='session-input'
+                                <input className={this.props.errors.length === 0 ? 'session-input' : 'session-input-error'}
                                     type='text' 
                                     value={this.state.email} 
                                     onChange={this.update('email')}

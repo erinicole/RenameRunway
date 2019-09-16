@@ -8,6 +8,12 @@
     border-bottom: 1px solid black;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .nav-container{
     display: flex;
     justify-content: space-between;
@@ -67,7 +73,7 @@
     color: #966034;
     width: 182px;
     height: 47px;
-    border: 1px solid #c7a279;
+    border: 2px solid #c7a279;
     text-align: center;
 }
 
