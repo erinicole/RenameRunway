@@ -1,0 +1,73 @@
+// Place all the styles related to the api/products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.heart-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 238px;
+    height: 347px;
+}
+
+.heart {
+	display: none;
+}
+
+.product-like-heart{
+    position: absolute;
+    width: 20px;
+    height: 17px;
+    z-index: 5;
+}
+
+.primary-area{
+    display: flex;
+    width: 238px;
+    height: 347px;
+}
+
+.product-cycle-image-0{
+    position: absolute;
+    width: 238px;
+    height: auto;
+    z-index: -1;
+}
+
+.product-card-details{
+    border-top: 1px solid #d6dad2;
+    width: 228px;
+    height: 74px;
+}
+
+.product-card-designer{
+    padding-top: 5px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px
+}
+
+.product-card-title{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px
+}
+
+.product-card-price{
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.product-rent-price{
+    color: black;
+    font-weight: bold;
+}
+
+.product-rent-line {
+    color: #999999;
+    font-weight: bold
+}
+
+.product-retail-price{
+    color: #999999
+}

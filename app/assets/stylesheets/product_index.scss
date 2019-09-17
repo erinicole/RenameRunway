@@ -1,0 +1,30 @@
+.products-entire-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 50px
+}
+
+.filter-container{
+    width: 320px;
+
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    width: 960px;
+}
+
+.products-header{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.products-view-all{
+    color: black
+}
+
+.products-count{
+    color: #A2A2A2
+}

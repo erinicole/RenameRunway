@@ -5,9 +5,11 @@ export const fetchProducts = () => (
     })
 )
 
-export const fetchProduct = id => (
+export const fetchProduct = id => {
+    return(
     $.ajax({
         method: 'GET',
         url: `api/products/${id}`
     })
-)
+    )
+}

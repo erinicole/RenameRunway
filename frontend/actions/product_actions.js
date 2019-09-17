@@ -10,13 +10,14 @@ const recieveProducts = products => ({
 
 const recieveProduct = product => ({
     type: RECEIVE_PRODUCT,
-    products
+    product
 })
 
 export const fetchProducts = () => dispatch => (
     ProductAPIUtil.fetchProducts().then(products => dispatch(recieveProducts(products)))
 )
 
-export const fetchProduct = (id) => dispatch => (
-    ProductAPIUtil.fetchProductid.then(product => dispatch(recieveProduct(product)))
-)
+export const fetchProduct = (id) => dispatch =>{
+    return(
+    ProductAPIUtil.fetchProduct(id).then(product => dispatch(recieveProduct(product)))
+)}

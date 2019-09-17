@@ -1,0 +1,95 @@
+.show-container-all{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 30px 0px 40px;
+    padding: 30px 30px 0px;
+}
+.show-left{
+    display: flex;
+}
+
+.show-gallery-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 85px;
+    height: 450px;
+
+    img{
+        width: 80px;
+        height: 120px;
+    }
+}
+
+.show-product-container{
+    display: flex;
+    width: 435px;
+    height: 653px;
+}
+
+.show-details-container{
+    display: flex;
+    flex-direction: column;
+    width: 426px;
+    height: 653px;
+}
+
+.show-header-one{
+    display: flex;
+    justify-content: space-between;
+}
+
+.show-designer{
+    font-size: 27px;
+    font-weight: bold;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.show-heart{
+    width: 18px;
+    height: 14px;
+}
+
+.show-title{
+    font-size: 13px;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom:20px;
+
+}
+
+.show-header-two{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid;
+    color: #c5c5c5;
+
+}
+
+.show-retail{
+    font-size: 13px;
+    color: #999999
+}
+
+.show-rent-section{
+}
+
+.show-rent-header{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.show-rent-box{
+    border-top: 5px solid black;
+    border:  1px solid gold;
+    width: 426px;
+    height: 97px;
+}
+
+.show-extra-details{
+
+}
