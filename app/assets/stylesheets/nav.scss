@@ -20,7 +20,7 @@
     align-items: center;
     height: 50px;
     margin-left: 40px;
-    width: 100%
+    width: 100%;
 }
 
 .nav-icon{
@@ -35,6 +35,14 @@
     cursor: pointer;
 }
 
+.links{
+    text-decoration: none;
+
+}
+
+.cat-link{
+    color:black
+}
 
 .nav-part-1{
     display: flex;

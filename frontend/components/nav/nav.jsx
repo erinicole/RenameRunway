@@ -20,11 +20,13 @@ const Nav = ({ currentUser, logout, openModal }) => {
             </Link>
             <div className='nav-container' >
                 <div className='nav-part-1'>
-                    <div className='cat-link'>CLOTHING</div>
+                    <Link class='links' to='/products'>
+                        <div className='cat-link'>CLOTHING</div>
+                    </Link>
                     <div className='cat-link'>ACCESSORIES</div>
                     <div className='cat-link'>DESIGNERS</div>
                     <div className='cat-link'>FALL ITEMS</div>
-                    <div className='nav-link'> <img className='nav-search'src={window.images.search} /> </div>
+                    <div className='nav-link'> <img className='nav-search' src={window.images.search} /> </div>
                 </div>
                 <div className='nav-part-2'>
                     <div className='nav-user-menu'>
