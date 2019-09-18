@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProductSlideshow from './product_show_slideshow'
 
 class ProductShow extends React.Component {
     constructor(props) {
@@ -14,8 +15,16 @@ class ProductShow extends React.Component {
     }
 
 
-    dropInfo() {
-        
+    dropInfo(field) {
+        return () => {
+            this.setState({
+                stylistNotes: false,
+                sizeFit: false,
+                productDetails: false,
+                meetDeveloper: false,
+                [field]: !this.state[field]
+            })
+        }
     }
 
 
@@ -41,10 +50,6 @@ class ProductShow extends React.Component {
                         </div>
                         <div className='show-product-container'>
                             <img className='show-main-prod' src={window.images.testa} />
-                            <img className='show-main-prod' src={window.images.testb} />
-                            <img className='show-main-prod' src={window.images.testc} />
-                            <img className='show-main-prod' src={window.images.testd} />
-
                         </div>
                     </div>
                     <div className='show-details-container'>
@@ -69,41 +74,42 @@ class ProductShow extends React.Component {
                         </div>
                         <div className='show-extra-details'>
                             <div className='show-stylsit-notes'>
-                                <p className='show-deets' onClick={this.dropInfo}>
+                                <p className='show-deets cursor' onClick={this.dropInfo('stylistNotes')}>
                                     <span> STYLIST NOTES </span>
                                     <img className='show-plus' src={window.images.plus} />
                                 </p>
-                                <p> { this.state.stylistNotes ? product.stylist_notes : ''} </p>
+                                <p className='show-hidden-info'> {this.state.stylistNotes ? product.stylist_notes : ''} </p>
                             </div>
-                            <div className='show-size-fit'>
-                                <p className='show-deets' onClick={this.dropInfo}>
+                            <div className='show-size-fit cursor'>
+                                <p className='show-deets' onClick={this.dropInfo('sizeFit')}>
                                     <span> SIZE &amp; FIT </span>
                                     <img className='show-plus' src={window.images.plus} />
                                 </p>
-                                <p>{this.state.sizeFit ? product.size_fit : ''}  </p>
+                                <p className='show-hidden-info'>{this.state.sizeFit ? product.size_fit : ''}  </p>
                             </div>
-                            <div className='show-product-details'>
-                                <p className='show-deets' onClick={this.dropInfo}>
+                            <div className='show-product-details cursor'>
+                                <p className='show-deets' onClick={this.dropInfo('productDetails')}>
                                     <span> PRODUCT DETAILS </span>
                                     <img className='show-plus' src={window.images.plus} />
                                 </p>
-                                <p>{this.state.productDetails ? product.product_details : ''} </p>
+                                <p className='show-hidden-info'>{this.state.productDetails ? product.product_details : ''} </p>
                             </div>
-                            <div className='show-erin-social'>
-                                <p className='show-deets' onClick={this.dropInfo}>
+                            <div className='show-erin-social cursor'>
+                                <p className='show-deets' onClick={this.dropInfo('meetDeveloper')}>
                                     <span> MEET THE DEVELOPER </span>
                                     <img className='show-plus' src={window.images.plus} />
                                 </p>
-                                <p>
+                                <p className='show-hidden-info'> 
                                     {this.state.meetDeveloper ? <a href='https://www.linkedin.com/in/erinicole1988/' target='_blank' className='a-link'>
-                                    <img id='show-linkedin' src={window.images.linkedin} />
-                                </a> : ''
-                                }
+                                        <img id='show-linkedin' src={window.images.linkedin} />
+                                    </a> : ''
+                                    }
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <ProductSlideshow />
             </div>
         );
     }
