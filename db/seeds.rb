@@ -5,7 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Designer.delete_all
 Product.delete_all
+
+Designers = Designer.create([{ designer_name: 'Nevaeh Brown' }, { designer_name: 'Tosin Afia' }, { designer_name: 'Funmi Lamkin' },
+            { designer_name: 'Michelle Choi' }, { designer_name: 'Nnamdi Jenkins' }, { designer_name: 'Aditi Patel' },
+            { designer_name: 'Jaylen Johnson' }, { designer_name: 'Trinity Stonequeen' }, { designer_name: 'Mamie Falls' },
+            { designer_name: 'Imani Wildcutter' }])
+
+Categories = Category.create([{ name: 'Outerwear' }, { name: 'Dresses' }, { name: 'Bottoms' }])
+
 
 Product1= Product.create(title: "Salient Style Wool Coat", designer_id: 1, category_id: 1, 
     stylist_notes: "A textured wool-blend trench coat, featuring a notched collar, long sleeves, slant pockets, and a button closures.", 

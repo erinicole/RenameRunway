@@ -20,14 +20,14 @@
 #
 
 class Product < ApplicationRecord
-    # has_many: designers,
-    # product_id: :id,
-    # foreign_key: :designer_id,
-    # class: :Designers
+    belongs_to :designer,
+    primary_key: :id,
+    foreign_key: :designer_id,
+    class_name: :Designer
 
-    # has_many: categories,
-    # product_id: :id,
-    # foreign_key: :category_id,
-    # class: :Categories
+    belongs_to :category,
+    primary_key: :id,
+    foreign_key: :category_id,
+    class_name: :Category
 
 end
