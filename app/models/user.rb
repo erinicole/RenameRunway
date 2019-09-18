@@ -8,6 +8,17 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  first_name      :string
+#  last_name       :string
+#  birthday        :date
+#  zip_code        :integer
+#  phone_number    :integer
+#  height          :string
+#  weight          :integer
+#  bust_size       :string
+#  body_type       :string
+#  jean_size       :integer
+#  dress_size      :integer
 #
 
 class User < ApplicationRecord
@@ -17,6 +28,11 @@ class User < ApplicationRecord
 
     attr_reader :password
     after_initialize :ensure_session_token
+
+    has_one :shopping_cart,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :ShoppingCart
 
     def self.find_by_cred(email, password)
         @user = User.find_by(email: email)

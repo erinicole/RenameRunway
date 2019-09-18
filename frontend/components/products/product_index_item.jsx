@@ -42,7 +42,7 @@ const ProductIndexItem = props => {
   
             </div>
             <div className='product-card-details'>
-                <h2 className='product-card-designer'>IRO {state.id}</h2>
+                <h2 className='product-card-designer'>{state.designer_name} {state.id}</h2>
                 <p className='product-card-title'>{state.title}</p>
                 <div className='product-card-price'>
                     <span className='product-rent-price'>${state.rent_price}</span>

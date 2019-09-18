@@ -3,3 +3,4 @@ json.extract! product, :id, :title, :designer_id,
                         :size_fit, :product_details, :retail_price,
                         :rent_price, :color, :weather, :sleeves,
                         :length
+json.extract! product.designer, :designer_name

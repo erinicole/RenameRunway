@@ -8,10 +8,10 @@
 Designer.delete_all
 Product.delete_all
 
-Designers = Designer.create([{ designer_name: 'Nevaeh Brown' }, { designer_name: 'Tosin Afia' }, { designer_name: 'Funmi Lamkin' },
-            { designer_name: 'Michelle Choi' }, { designer_name: 'Nnamdi Jenkins' }, { designer_name: 'Aditi Patel' },
-            { designer_name: 'Jaylen Johnson' }, { designer_name: 'Trinity Stonequeen' }, { designer_name: 'Mamie Falls' },
-            { designer_name: 'Imani Wildcutter' }])
+Designers = Designer.create([{ designer_name: 'NevaeH' }, { designer_name: 'Tosin & Funmi' }, { designer_name: 'Lamkin Files' },
+            { designer_name: 'M. Choi' }, { designer_name: 'Nnamdi Jenkins' }, { designer_name: 'Aditi Patel' },
+            { designer_name: 'Jaylen J. Johnson' }, { designer_name: 'Stonequeen' }, { designer_name: 'Mamie Falls' },
+            { designer_name: 'WildCutter' }])
 
 Categories = Category.create([{ name: 'Outerwear' }, { name: 'Dresses' }, { name: 'Bottoms' }])
 

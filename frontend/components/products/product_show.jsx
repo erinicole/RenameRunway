@@ -43,7 +43,7 @@ class ProductShow extends React.Component {
                     <div className='show-details-container'>
                         <div className='show-header'>
                             <div className='show-header-one'>
-                                <div className='show-designer'> Iro </div>
+                                <div className='show-designer'> {product.designer_name} </div>
                                 <img className='show-heart' src={window.images.heart} />
                             </div>
                             <div className='show-title'>{product.title} </div>

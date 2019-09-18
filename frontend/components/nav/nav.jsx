@@ -20,7 +20,7 @@ const Nav = ({ currentUser, logout, openModal }) => {
             </Link>
             <div className='nav-container' >
                 <div className='nav-part-1'>
-                    <Link class='links' to='/products'>
+                    <Link className='links' to='/products'>
                         <div className='cat-link'>CLOTHING</div>
                     </Link>
                     <div className='cat-link'>ACCESSORIES</div>
