@@ -4,13 +4,17 @@
 
 .heart-container{
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row-reverse;
     width: 238px;
     height: 347px;
 }
 
 .heart {
 	display: none;
+}
+
+.heart-button:hover{
+    cursor: pointer;
 }
 
 .product-like-heart{

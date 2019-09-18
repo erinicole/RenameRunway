@@ -1,11 +1,22 @@
 .show-container-all{
     display: flex;
     justify-content: space-between;
-    margin: 40px 30px 0px 40px;
+    margin-right: 150px ;
+    margin-top: 40px;
+    margin-left: 150px;
     padding: 30px 30px 0px;
 }
 .show-left{
     display: flex;
+    position: relative;
+}
+
+.show-main-prod{
+    display:none;
+}
+
+.cursor{
+    cursor: pointer;
 }
 
 .show-gallery-container{
@@ -85,11 +96,56 @@
 
 .show-rent-box{
     border-top: 5px solid black;
-    border:  1px solid gold;
+    border-left:  1px solid #dddddd;
+    border-right:  1px solid #dddddd;
+    border-bottom:  1px solid #dddddd;
+    background-color: #F7F7F7;
     width: 426px;
     height: 97px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    font-weight: lighter;
+    p{
+        margin-left: 40px;
+    }
+  
+}
+
+.show-p-top{
+    margin-top: 15px;
+}
+
+.show-p-bottom{
+    font-weight: bold;
 }
 
 .show-extra-details{
+    margin-top: 20px;
+    span{
+        font-family: 'Quicksand', sans-serif;
+        font-size: 15px;
+        color: #818180;
+        font-weight: bold;
+    }
 
+    img{
+        width: 11px;
+        height: 11px;
+    }
+
+    div{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #dddddd
+    }
+}
+
+.show-deets{
+    display: flex;
+    justify-content: space-between;
+}
+
+#show-linkedin{
+    height: 30px;
+    width: 30px;
 }

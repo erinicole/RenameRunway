@@ -20,6 +20,7 @@ const ProductIndexItem = props => {
                     <div className='heart-button' onClick={changeHeart}> 
                         <img className='product-like-heart' src={heart ? window.images.heart : window.images.black_heart }  />
                     </div>
+                    <Link to={`/products/${props.product.id}`}>
                     <div className='primary-area'>
                         <div className='product-wrapper-4-images'>
                             <div >
@@ -36,7 +37,9 @@ const ProductIndexItem = props => {
                             </div> */}
                         </div>
                     </div>
+                    </Link>
                 </div>
+  
             </div>
             <div className='product-card-details'>
                 <h2 className='product-card-designer'>IRO {state.id}</h2>
