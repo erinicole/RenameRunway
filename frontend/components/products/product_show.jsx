@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ProductSlideshow from './product_show_slideshow'
 
 class ProductShow extends React.Component {
@@ -13,7 +12,6 @@ class ProductShow extends React.Component {
             meetDeveloper: false
         }
     }
-
 
     dropInfo(field) {
         return () => {
@@ -41,17 +39,7 @@ class ProductShow extends React.Component {
         return (
             <div>
                 <div className='show-container-all'>
-                    <div className='show-left'>
-                        <div className='show-gallery-container'>
-                            <img className='show-gallery-one ' className='cursor' src={window.images.testa} />
-                            <img className='show-gallery-two ' className='cursor' src={window.images.testb} />
-                            <img className='show-gallery-three ' className='cursor' src={window.images.testc} />
-                            <img className='show-gallery-four ' className='cursor' src={window.images.testd} />
-                        </div>
-                        <div className='show-product-container'>
-                            <img className='show-main-prod' src={window.images.testa} />
-                        </div>
-                    </div>
+                    <ProductSlideshow />
                     <div className='show-details-container'>
                         <div className='show-header'>
                             <div className='show-header-one'>
@@ -109,7 +97,6 @@ class ProductShow extends React.Component {
                         </div>
                     </div>
                 </div>
-                <ProductSlideshow />
             </div>
         );
     }
