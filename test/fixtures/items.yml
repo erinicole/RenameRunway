@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: items
+#
+#  id         :bigint           not null, primary key
+#  product_id :integer
+#  size       :integer
+#  quantity   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_id: MyString
+  size: MyString
+  quantity: MyString
+
+two:
+  product_id: MyString
+  size: MyString
+  quantity: MyString

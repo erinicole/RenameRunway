@@ -3,6 +3,9 @@ import ReactDOM from  'react-dom';
 import configureStore from './store/store'
 import { signin, logout} from './actions/session_actions'
 import Root from './components/root'
+import { fetchShoppingCartItems } from './actions/shopping_cart_item_actions'
+import { fetchItems } from './actions/item_action'
+
 
 document.addEventListener('DOMContentLoaded', () => {
     let store
@@ -20,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
     }
     //testing
+    window.fetchShoppingCartItems = fetchShoppingCartItems;
+    window.fetchItems = fetchItems
     window.signin = signin;
     window.logout = logout
     window.getState = store.getState;

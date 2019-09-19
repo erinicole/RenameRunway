@@ -35,4 +35,9 @@ class Product < ApplicationRecord
     foreign_key: :user_id,
     class_name: :ShoppingCart
 
+    has_many :items,
+    primary_key: :id,
+    foreign_key: :product_id,
+    class_name: :Item
+
 end
