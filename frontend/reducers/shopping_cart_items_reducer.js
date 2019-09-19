@@ -3,12 +3,11 @@ import { RECEIVE_SHOPPING_CART_ITEM } from '../actions/shopping_cart_item_action
 import { REMOVE_SHOPPING_CART_ITEMS } from '../actions/shopping_cart_item_actions'
 
 
-const ShoppingCartItemReducer = (oldState = {}, action) => {
+const ShoppingCartItemsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let newState
     switch (action.type) {
         case RECEIVE_SHOPPING_CART_ITEMS:
-            debugger
             return action.shoppingCartItems
         case RECEIVE_SHOPPING_CART_ITEM:
             newState = Object.assign({}, oldState, { [action.shoppingCartItem.id]: action.shoppingCartItem });
@@ -22,4 +21,4 @@ const ShoppingCartItemReducer = (oldState = {}, action) => {
     }
 }
 
-export default ShoppingCartItemReducer;
+export default ShoppingCartItemsReducer;

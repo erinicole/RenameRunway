@@ -1,16 +1,16 @@
 # == Schema Information
 #
-# Table name: shopping_carts
+# Table name: shopping_cart_items
 #
 #  id         :bigint           not null, primary key
 #  user_id    :integer
-#  product_id :integer
 #  start_date :date
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  item_id    :integer
 #
 
-class ShoppingCart < ApplicationRecord
+class ShoppingCartItem < ApplicationRecord
     belongs_to :user,
     primary_key: :id,
     foreign_key: :user_id,

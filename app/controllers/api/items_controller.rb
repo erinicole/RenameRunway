@@ -5,7 +5,8 @@ class Api::ItemsController < ApplicationController
     end
 
     def index
-        @items = Item.all
+        @items = Item.where(product_id: params[:product_id])
+        debugger
     end
     
     def update

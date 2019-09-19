@@ -1,4 +1,4 @@
-class Api::ShoppingCartsItemsController < ApplicationController
+class Api::ShoppingCartItemsController < ApplicationController
     before_action :require_signin
 
     def create

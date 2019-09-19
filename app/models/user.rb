@@ -32,7 +32,7 @@ class User < ApplicationRecord
     has_many :shopping_cart_items,
     primary_key: :id,
     foreign_key: :user_id,
-    class_name: :ShoppingCart
+    class_name: :ShoppingCartItem
 
     def self.find_by_cred(email, password)
         @user = User.find_by(email: email)
