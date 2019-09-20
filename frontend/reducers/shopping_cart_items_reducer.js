@@ -1,6 +1,6 @@
 import { RECEIVE_SHOPPING_CART_ITEMS } from '../actions/shopping_cart_item_actions'
 import { RECEIVE_SHOPPING_CART_ITEM } from '../actions/shopping_cart_item_actions'
-import { REMOVE_SHOPPING_CART_ITEMS } from '../actions/shopping_cart_item_actions'
+import { REMOVE_SHOPPING_CART_ITEM } from '../actions/shopping_cart_item_actions'
 
 
 const ShoppingCartItemsReducer = (oldState = {}, action) => {
@@ -12,9 +12,9 @@ const ShoppingCartItemsReducer = (oldState = {}, action) => {
         case RECEIVE_SHOPPING_CART_ITEM:
             newState = Object.assign({}, oldState, { [action.shoppingCartItem.id]: action.shoppingCartItem });
             return newState
-        case REMOVE_SHOPPING_CART_ITEMS:
+        case REMOVE_SHOPPING_CART_ITEM:
             newState = Object.assign({}, oldState);
-            delete newState.action[shoppingCartItemId]
+            delete newState[action.shoppingCartItemId]
             return newState
         default:
             return oldState

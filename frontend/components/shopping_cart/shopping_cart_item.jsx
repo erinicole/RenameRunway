@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ShoppingCartItem = ({ closeModal }) => (
+const ShoppingCartItem = ({ shoppingCartItem, deleteShoppingCartItem }) => (
     <div className='shopping-cart-item-all'>
-        <div> image goes here</div>
+        <img className='shopping-cart-item-img' src={window.images.testd} alt='dress' />
         <div className='shopping-cart-details'>
-            <div onClick={closeModal} >X</div>
-            <p>title</p>
+            <div className='shopping-cart-two'>
+                <p>title</p>
+                <div onClick={() => deleteShoppingCartItem(shoppingCartItem.id)} >X</div>
+            </div>
             <p>Size: </p>
-            <div>
+            <div className='shopping-cart-two'>
                 <p>$</p>
                 <p>Edit</p>
             </div>

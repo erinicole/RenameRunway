@@ -3,10 +3,10 @@ class Api::ShoppingCartItemsController < ApplicationController
 
     def create
         @shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)
-    
         unless @shopping_cart_item.save
             render json: @shopping_cart_item.errors.full_messages, status: 404
         end
+        render :show
     end
 
     def index
@@ -15,8 +15,9 @@ class Api::ShoppingCartItemsController < ApplicationController
     end
 
     def destroy
-        shopping_cart_item = current_user.shopping_cart_items.find(params[:id])
+        shopping_cart_item = ShoppingCartItem.find(params[:id])
         shopping_cart_item.destroy
+        render json: shopping_cart_item.id
     end
 
     private

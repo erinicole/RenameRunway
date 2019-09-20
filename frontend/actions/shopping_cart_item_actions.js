@@ -2,7 +2,7 @@ import * as ShoppingCartItemAPIUtil from '../util/shopping_cart_items_util'
 
 export const RECEIVE_SHOPPING_CART_ITEMS = 'RECEIVE_SHOPPING_CART_ITEMS'
 export const RECEIVE_SHOPPING_CART_ITEM = 'RECEIVE_SHOPPING_CART_ITEM'
-export const REMOVE_SHOPPING_CART_ITEMS = 'REMOVE_SHOPPING_CART_ITEMS'
+export const REMOVE_SHOPPING_CART_ITEM = 'REMOVE_SHOPPING_CART_ITEM'
 
 
 const recieveShoppingCartItems = shoppingCartItems => ({
@@ -16,7 +16,7 @@ const recieveShoppingCartItem = shoppingCartItem => ({
 })
 
 const removeShoppingCartItem = id => ({
-    type: REMOVE_SHOPPING_CART_ITEMS,
+    type: REMOVE_SHOPPING_CART_ITEM,
     shoppingCartItemId: id
 
 })
@@ -35,6 +35,6 @@ export const createShoppingCartItem = (shoppingCartItem) => dispatch => {
 
 export const deleteShoppingCartItem = (id) => dispatch => {
     return (
-        ShoppingCartItemAPIUtil.deleteShoppingCartItem(id).then(shoppingCartItem => dispatch(removeShoppingCartItem(shoppingCartItem)))
+        ShoppingCartItemAPIUtil.deleteShoppingCartItem(id).then(shoppingCartItemId => dispatch(removeShoppingCartItem(shoppingCartItemId)))
     )
 }

@@ -5,6 +5,7 @@ import { signin, logout} from './actions/session_actions'
 import Root from './components/root'
 import { fetchShoppingCartItems } from './actions/shopping_cart_item_actions'
 import { fetchItems } from './actions/item_action'
+import {fetchShoppingCartProducts} from './actions/product_actions'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
     }
     //testing
+    window.fetchShoppingCartProducts = fetchShoppingCartProducts;
     window.fetchShoppingCartItems = fetchShoppingCartItems;
     window.fetchItems = fetchItems
     window.signin = signin;

@@ -1,0 +1,30 @@
+.shopping-cart-item-all{
+    display: flex;
+    width: 100%;
+    padding-top:10px;
+    padding-bottom:20px;
+    height: 140px;
+    flex-direction: row;
+    background: #ffffff;
+
+}
+
+.shopping-cart-item-img{
+    width: 70px;
+    height: 90px;
+    margin-right: 20px;
+}
+
+.shopping-cart-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 110px;
+    font-size: 14px;
+}
+
+.shopping-cart-two{
+    display: flex;
+    justify-content: space-between;
+    width: 245px;
+}

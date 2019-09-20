@@ -34,6 +34,10 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :ShoppingCartItem
 
+    has_many :shopping_cart_products,
+    through: :shopping_cart_items,
+    source: :products
+
     def self.find_by_cred(email, password)
         @user = User.find_by(email: email)
         return nil unless @user
