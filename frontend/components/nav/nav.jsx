@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import NavSignIn from './nav_sign_in'
 
 
 
-const Nav = ({ currentUser, logout, openModal }) => {
+const Nav = ({ currentUser, openModal, fetchShoppingCartItems }) => {
 
     const getSignIn = () => (
         <div >
@@ -12,7 +12,18 @@ const Nav = ({ currentUser, logout, openModal }) => {
         </div>
     );
 
+    const shopping_bag = () => (
+        <button className='nav-shopping-bag-button' onClick={() => openModal('shoppingcart')}>
+             <img className='nav-shopping-bag' src={window.images.shopping_bag} alt='shopping bag' /> 
+        </button>
+    )
+    
+    // this is a new way to do component did mount using react hooks
+    useEffect(() => {
+        fetchShoppingCartItems();
+    }, []);
 
+    
     return (
         <div className='nav-bar' id='nav-bar'>
             <Link to='/'>
@@ -32,7 +43,8 @@ const Nav = ({ currentUser, logout, openModal }) => {
                     <div className='nav-user-menu'>
                         {currentUser ? <NavSignIn /> : getSignIn()}
                         <img className='nav-heart-icon' src={window.images.heart} />
-                        {currentUser ? <img className='nav-shopping-bag' src={window.images.shopping_bag} alt='shopping bag' /> : null}
+                        {currentUser ? shopping_bag() : null}
+                        {/* {currentUser ? <img className='nav-shopping-bag' src={window.images.shopping_bag} alt='shopping bag' /> : null} */}
                         <a href='https://www.linkedin.com/in/erinicole1988/' target='_blank' className='a-link'>
                             <div className='nav-linkedin'>
                                 <p className='nav-linkedin-bold' > LIMITED TIME ONLY </p>

@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import SignInFormContainer from '../session_form/sign_in_form_container';
 import JoinNowFormContainer from '../session_form/join_now_form_container';
+import ShoppingCartContainer from '../shopping_cart/shopping_cart_container';
 
 
 const Modal = ({modal, closeModal}) => {
@@ -17,6 +18,9 @@ const Modal = ({modal, closeModal}) => {
             break;
         case 'joinnow':
             component = <JoinNowFormContainer />;
+            break;
+        case 'shoppingcart':
+            component = <ShoppingCartContainer />;
             break;
         default:
             return null;

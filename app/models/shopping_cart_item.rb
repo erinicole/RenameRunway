@@ -16,8 +16,12 @@ class ShoppingCartItem < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
-    belongs_to :product,
+    belongs_to :item,
     primary_key: :id,
-    foreign_key: :user_id,
-    class_name: :Product
+    foreign_key: :item_id,
+    class_name: :Item
+
+    has_many :products,
+    through: :item,
+    source: :product
 end

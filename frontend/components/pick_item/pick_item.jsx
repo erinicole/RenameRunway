@@ -25,10 +25,13 @@ class PickItemsForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        if (this.props.user) {
+        if (this.props.user && this.state.itemId === '') {
+            alert('Size needed')
+        }
+        else if (this.props.user) {
             const shoppingCartItem = {
                 user_id: this.props.user.id,
-                item_id: this.props.items.id
+                item_id: this.state.itemId
             }
             this.props.createShoppingCartItem(shoppingCartItem);
         } else {
@@ -52,7 +55,7 @@ class PickItemsForm extends React.Component {
                     </label>
                     <label className='pick-item-label'> SIZE
                         <select onChange={this.update('itemId')}>
-                            <option>Select</option>
+                            <option value=''>Select</option>
                             {this.props.items.map(item => {
                                 return (
                                     <option value={item.size} key={item.size}>
