@@ -5,7 +5,7 @@ class PickItemsForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            zipCode: '',
+            zipCode: props.user.zip_code,
             date: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,18 +41,19 @@ class PickItemsForm extends React.Component {
     }
 
     render() {
+        console.log(this.state.zipCode)
         return (
             <div className='add-item-div'>
                 <form className='add-item-form' >
                     <label className='pick-item-label'> ZIP CODE
                     <input className='pick-item-input'
                             type='text'
-                            value={this.props.user ? this.props.user.zip_code : ''}
+                            defaultValue={this.props.user ? this.state.zipCode : ''}
                             onChange={this.update('zipCode')} />
                     </label>
                     <label className='pick-item-label'> SIZE
                         <select>
-                            <option >Select</option>
+                            <option>Select</option>
                             {this.props.items.map( item =>{
                                 return(
                                     <option value={item.size} key={item.size}>{item.size}</option>
