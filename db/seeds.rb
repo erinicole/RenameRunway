@@ -56,7 +56,7 @@ Product5= Product.create!(title: "Looking Lively Faux Fur Jacket", designer_id: 
     size_fit:"Model is 5\'8\" and wearing a Small. This product tends to run larger.", retail_price: 185, rent_price:30, color: "purple", weather: "WARM WEATHER", 
     sleeves: "LONG SLEEVES")
     
-Product6= Product.create!(title: "Escape to Nature Coat", designer_id: 5, category_id: 1, 
+Product6= Product.create!(title: "Escape to Nature Coat", designer_id:6, category_id: 1, 
     stylist_notes: "Keep warm in cold weather with this faux fur jacket, featuring a hood, purple everything, ribbed trim, front zip closure with a pull ring, and a woven lining.", 
     product_details: "Lilac crepe (100% Polyester). Jacket. Long sleeves. Fully lined. Tie closure at waist. 27.5\" from shoulder to hemline. Imported.", 
     size_fit:"Model is 5\'8\" and wearing a Small. This product tends to run larger.", retail_price: 185, rent_price:30, color: "purple", weather: "WARM WEATHER", 

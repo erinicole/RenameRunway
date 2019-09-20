@@ -7,19 +7,19 @@ export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS'
 
 const receiveCurrentUser = (currentUser) => ({
 
-        type: RECEIVE_CURRENT_USER,
-        currentUser
+    type: RECEIVE_CURRENT_USER,
+    currentUser
 
 })
 
 const logoutCurrentUser = () => ({
-        type: LOGOUT_CURRENT_USER
+    type: LOGOUT_CURRENT_USER
 })
 
 const receiveErrors = (errors) => ({
 
-        type: RECEIVE_SESSION_ERRORS,
-        errors
+    type: RECEIVE_SESSION_ERRORS,
+    errors
 
 })
 
@@ -30,7 +30,7 @@ export const clearErrors = () => ({
 export const joinnow = user => dispatch => (
     UserAPIUtil.joinnow(user).then(user => (
         dispatch(receiveCurrentUser(user))
-    ), err => ( 
+    ), err => (
         dispatch(receiveErrors(err.responseJSON))
     ))
 );

@@ -9,7 +9,7 @@ class ProductSlideshow extends React.Component {
             imageA: true,
             imageB: false,
             imageC: false,
-            imageD: false
+            imageD: false,
         }
     }
 

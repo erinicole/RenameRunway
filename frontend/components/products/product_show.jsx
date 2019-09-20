@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductSlideshow from './product_show_slideshow'
+import PickItemsForm from '../pick_item/pick_item_container'
 
 class ProductShow extends React.Component {
     constructor(props) {
@@ -9,7 +10,8 @@ class ProductShow extends React.Component {
             stylistNotes: false,
             sizeFit: false,
             productDetails: false,
-            meetDeveloper: false
+            meetDeveloper: false,
+            form: false
         }
     }
 
@@ -24,6 +26,16 @@ class ProductShow extends React.Component {
             })
         }
     }
+
+    toggleForm(field) {
+        return () => {
+            this.setState({
+                form: false,
+                [field]: !this.state[field]
+            })
+        }
+    }
+
 
 
     componentDidMount() {
@@ -54,12 +66,13 @@ class ProductShow extends React.Component {
                         </div>
                         <div className='show-rent-section'>
                             <p className='show-rent-header'> Rent Some Pockets </p>
-                            <div className='show-rent-box'>
+                            <div className='show-rent-box' onClick={this.toggleForm('form')}>
                                 <p className='show-p-top'>RTR Reserve</p>
                                 <p>Rent for 4 days</p>
                                 <p className='show-p-bottom' >${product.rent_price}</p>
                             </div>
                         </div>
+                        {this.state.form ? <PickItemsForm /> : ''} 
                         <div className='show-extra-details'>
                             <div className='show-stylsit-notes'>
                                 <p className='show-deets cursor' onClick={this.dropInfo('stylistNotes')}>
