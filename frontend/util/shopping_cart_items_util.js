@@ -12,7 +12,7 @@ export const createShoppingCartItem = (shopping_cart_item) => {
         $.ajax({
             method: 'POST',
             url:'api/shopping_cart_items',
-            data: { shopping_cart_item}
+            data: { shopping_cart_item }
         })
     )
 }

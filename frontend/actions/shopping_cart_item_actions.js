@@ -27,14 +27,14 @@ export const fetchShoppingCartItems = () => dispatch => {
     )
 }
 
-export const createShoppingCartItem = (shoppingCartiItem) => dispatch => {
+export const createShoppingCartItem = (shoppingCartItem) => dispatch => {
     return (
-        ShoppingCartItemAPIUtil.createShoppingCartItem(shoppingCartiItem).then(shoppingCartiItem => dispatch(recieveShoppingCartItem(shoppingCartiItem)))
+        ShoppingCartItemAPIUtil.createShoppingCartItem(shoppingCartItem).then(shoppingCartItem => dispatch(recieveShoppingCartItem(shoppingCartItem)))
     )
 }
 
 export const deleteShoppingCartItem = (id) => dispatch => {
     return (
-        ShoppingCartItemAPIUtil.deleteShoppingCartItem(id).then(shoppingCartiItem => dispatch(removeShoppingCartItem(shoppingCartiItem)))
+        ShoppingCartItemAPIUtil.deleteShoppingCartItem(id).then(shoppingCartItem => dispatch(removeShoppingCartItem(shoppingCartItem)))
     )
 }

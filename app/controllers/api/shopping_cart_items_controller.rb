@@ -2,9 +2,11 @@ class Api::ShoppingCartItemsController < ApplicationController
     before_action :require_signin
 
     def create
-
-            @shopping_cart_item = ShopingCart.new(shopping_cart_item_params)
-
+        @shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)
+        
+        unless @shopping_cart_item.save
+            render json: @shopping_cart_item.errors.full_messages, status: 404
+        end
     end
 
     def index
@@ -20,6 +22,6 @@ class Api::ShoppingCartItemsController < ApplicationController
     private
 
     def shopping_cart_item_params
-        params.require(:shopping_cart_item).permit(:user_id, :product_id, :start_date)
+        params.require(:shopping_cart_item).permit(:user_id, :item_id, :start_date)
     end
 end

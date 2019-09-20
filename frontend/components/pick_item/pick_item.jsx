@@ -6,7 +6,8 @@ class PickItemsForm extends React.Component {
         super(props)
         this.state = {
             zipCode: props.user.zip_code,
-            date: ''
+            date: '',
+            itemId: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     };
@@ -18,7 +19,6 @@ class PickItemsForm extends React.Component {
     }
 
 
-
     getSignIn() {
         this.props.openModal('signin');
     };
@@ -28,9 +28,9 @@ class PickItemsForm extends React.Component {
         if (this.props.user) {
             const shoppingCartItem = {
                 user_id: this.props.user.id,
-                product_id: this.props.item.product_id
+                item_id: this.props.items.id
             }
-            this.createShoppingCartItem(shoppingCartItem);
+            this.props.createShoppingCartItem(shoppingCartItem);
         } else {
             this.props.openModal('signin');
         }
@@ -41,7 +41,6 @@ class PickItemsForm extends React.Component {
     }
 
     render() {
-        console.log(this.state.zipCode)
         return (
             <div className='add-item-div'>
                 <form className='add-item-form' >
@@ -52,11 +51,13 @@ class PickItemsForm extends React.Component {
                             onChange={this.update('zipCode')} />
                     </label>
                     <label className='pick-item-label'> SIZE
-                        <select>
+                        <select onChange={this.update('itemId')}>
                             <option>Select</option>
-                            {this.props.items.map( item =>{
-                                return(
-                                    <option value={item.size} key={item.size}>{item.size}</option>
+                            {this.props.items.map(item => {
+                                return (
+                                    <option value={item.size} key={item.size}>
+                                        {item.size}
+                                    </option>
                                 )
                             })}
                         </select>
