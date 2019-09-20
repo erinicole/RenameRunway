@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductSlideshow from './product_show_slideshow'
-import PickItemsForm from '../pick_item/pick_item_container'
+import PickItemsFormContainer from '../pick_item/pick_item_container'
 
 class ProductShow extends React.Component {
     constructor(props) {
@@ -72,7 +72,7 @@ class ProductShow extends React.Component {
                                 <p className='show-p-bottom' >${product.rent_price}</p>
                             </div>
                         </div>
-                        {this.state.form ? <PickItemsForm /> : ''} 
+                        {this.state.form ? <PickItemsFormContainer productId={product.id}/> : ''} 
                         <div className='show-extra-details'>
                             <div className='show-stylsit-notes'>
                                 <p className='show-deets cursor' onClick={this.dropInfo('stylistNotes')}>
