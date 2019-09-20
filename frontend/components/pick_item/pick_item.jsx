@@ -17,6 +17,8 @@ class PickItemsForm extends React.Component {
         )
     }
 
+
+
     getSignIn() {
         this.props.openModal('signin');
     };
@@ -50,10 +52,12 @@ class PickItemsForm extends React.Component {
                     </label>
                     <label className='pick-item-label'> SIZE
                         <select>
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
+                            <option >Select</option>
+                            {this.props.items.map( item =>{
+                                return(
+                                    <option value={item.size} key={item.size}>{item.size}</option>
+                                )
+                            })}
                         </select>
                     </label>
                     <label className='pick-item-label'>
