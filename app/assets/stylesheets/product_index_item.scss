@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.product-card{
+    // margin-right: 20px;
+    // margin-left: 20px;
+    margin: 30px
+}
+
 .heart-container{
     display: flex;
     flex-direction: row-reverse;

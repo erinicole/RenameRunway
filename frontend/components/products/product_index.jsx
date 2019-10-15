@@ -18,18 +18,18 @@ class ProductIndex extends React.Component {
             )
         });
 
-        let content = []
-        for (let i = 1; i <= products.length + 1; i++) {
-            if (i % 3 === 0) {
-                content.push(
-                    <div className='row' key={i - 2}>
-                        {products[i - 1]}
-                        {products[i - 2]}
-                        {products[i - 3]}
-                    </div>
-                )
-            }
-        }
+        // let content = []
+        // for (let i = 1; i <= products.length + 1; i++) {
+        //     if (i % 3 === 0) {
+        //         content.push(
+        //             <div className='row' key={i - 2}>
+        //                 {products[i - 1]}
+        //                 {products[i - 2]}
+        //                 {products[i - 3]}
+        //             </div>
+        //         )
+        //     }
+        // }
         return (
             <div className='products-entire-container'>
 
@@ -41,8 +41,10 @@ class ProductIndex extends React.Component {
                         <span className='products-view-all'> View All </span> 
                         <span className='products-count'> ({products.length})  </span>
                     </div>
-                    <div>
-                        {content}
+                    <div className='products-all-parent'>
+                        <div className='products-all'>
+                            {products}
+                        </div>
                     </div>
                 </div>
 

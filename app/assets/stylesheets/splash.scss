@@ -3,8 +3,11 @@
     position: relative;
     height: 900px;
     width: 100%;
-    background: image-url('hero.jpg');
+    background-image: url('hero.jpg');
+    // background-size: contain;
     background-size: cover;
+    background-repeat: no-repeat;
+    // background-size: cover;
     justify-content: center;
     flex-direction: column;
     margin-bottom: 50px;

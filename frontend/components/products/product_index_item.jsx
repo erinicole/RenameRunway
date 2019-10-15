@@ -14,8 +14,8 @@ const ProductIndexItem = props => {
 
 
     return (
-        < div >
-            <div className='product-card'>
+        < div className='product-card'>
+            <div className='product-clothing-item'>
                 <div className='heart-container'>
                     <div className='heart-button' onClick={changeHeart}> 
                         <img className='product-like-heart' src={heart ? window.images.heart : window.images.black_heart }  />

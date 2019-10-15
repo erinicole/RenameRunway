@@ -1,0 +1,49 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  
+  //the home splash page
+  .splash-all {
+    flex-direction: column;
+
+  }
+
+  .splash-hero {
+    /* The image used */
+    background-image: url('hero.jpg');
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .splash-category-pics{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+
+  }
+
+  div .splash-cat1-pic{
+    width: 100%;
+    height: auto;
+    margin-right: 0px;
+  }
+
+ div .splash-cat2-pic{
+    width: 100%;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+
+
+
+
+  //the 404 page
+
+
+}

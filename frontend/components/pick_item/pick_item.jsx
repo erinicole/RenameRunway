@@ -5,7 +5,7 @@ class PickItemsForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            zipCode: props.user.zip_code,
+            zipCode: props.user.zip_code, //set initial zip code to user if loggedin
             date: '',
             itemId: ''
         }
@@ -29,6 +29,8 @@ class PickItemsForm extends React.Component {
             alert('Size needed')
         }
         else if (this.props.user) {
+            //did a lot of debugging figured out how  to pass shoppingCartItem
+            // through to createShoppingCartItem thunk action
             const shoppingCartItem = {
                 user_id: this.props.user.id,
                 item_id: this.state.itemId
@@ -47,6 +49,7 @@ class PickItemsForm extends React.Component {
         return (
             <div className='add-item-div'>
                 <form className='add-item-form' >
+                    {/* set initial zip code to user if loggedin */}
                     <label className='pick-item-label'> ZIP CODE
                     <input className='pick-item-input'
                             type='text'
@@ -55,7 +58,9 @@ class PickItemsForm extends React.Component {
                     </label>
                     <label className='pick-item-label'> SIZE
                         <select onChange={this.update('itemId')}>
-                            <option value=''>Select</option>
+                            {/* below iterated through the prop to create the select options
+                            need to put something between the option tags to show */}
+                            <option value=''>Select</option> 
                             {this.props.items.map(item => {
                                 return (
                                     <option value={item.size} key={item.size}>
@@ -72,6 +77,7 @@ class PickItemsForm extends React.Component {
                             value='date'
                             onChange={this.update('date')} />
                     </label>
+                    {/* changed */}
                     <input type='submit'
                         value='ADD TO BAG'
                         onClick={this.handleSubmit} />
