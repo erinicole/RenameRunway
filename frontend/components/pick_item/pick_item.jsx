@@ -5,13 +5,20 @@ class PickItemsForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            zipCode: props.user.zip_code, //set initial zip code to user if loggedin
+            zipCode: '', //set initial zip code to user if loggedin
             date: '',
             itemId: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
+    updateZipCode() {
+        if (props.user){
+            this.setState(
+                {zipCode: props.user.zip_code}
+            )
+        }
+    }
     update(field) {
         return e => this.setState(
             { [field]: e.target.value }
@@ -53,7 +60,7 @@ class PickItemsForm extends React.Component {
                     <label className='pick-item-label'> ZIP CODE
                     <input className='pick-item-input'
                             type='text'
-                            defaultValue={this.props.user ? this.state.zipCode : ''}
+                            defaultValue={this.props.user ? this.props.user.zip_code : ''}
                             onChange={this.update('zipCode')} />
                     </label>
                     <label className='pick-item-label'> SIZE
@@ -69,7 +76,7 @@ class PickItemsForm extends React.Component {
                                 )
                             })}
                         </select>
-                    </label>
+                    </label> 
                     <label className='pick-item-label'>
                         Date goes here
                         <input className='pick-item-input'

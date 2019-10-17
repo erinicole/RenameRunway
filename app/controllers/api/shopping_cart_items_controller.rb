@@ -3,10 +3,12 @@ class Api::ShoppingCartItemsController < ApplicationController
 
     def create
         @shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)
+                # debugger
+
         unless @shopping_cart_item.save
             render json: @shopping_cart_item.errors.full_messages, status: 404
         end
-        render :show
+        # render :show
     end
     #retrieving all of the current user  items,  not just all items
     def index

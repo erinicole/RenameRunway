@@ -30,10 +30,10 @@ class Product < ApplicationRecord
     foreign_key: :category_id,
     class_name: :Category
 
-    has_many :shoppingCarts,
-    primary_key: :id,
-    foreign_key: :user_id,
-    class_name: :ShoppingCart
+    # has_many :shoppingCarts,
+    # primary_key: :id,
+    # foreign_key: :user_id,
+    # class_name: :ShoppingCart
 
     has_many :items,
     primary_key: :id,
