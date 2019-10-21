@@ -34,9 +34,15 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :ShoppingCartItem
 
+    has_many :reviews,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Review
+
     has_many :shopping_cart_products,
     through: :shopping_cart_items,
     source: :products
+
 
     def self.find_by_cred(email, password)
         @user = User.find_by(email: email)

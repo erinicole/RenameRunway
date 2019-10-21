@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductSlideshow from './product_show_slideshow'
 import PickItemsFormContainer from '../pick_item/pick_item_container'
+import ReviewsContainer from '../reviews/review_index_container'
 
 class ProductShow extends React.Component {
     constructor(props) {
@@ -45,7 +46,7 @@ class ProductShow extends React.Component {
 
     render() {
         const { product } = this.props
-        if (!this.props.product) {
+        if (!product) {
             return null
         }
         return (
@@ -110,6 +111,8 @@ class ProductShow extends React.Component {
                         </div>
                     </div>
                 </div>
+                <ReviewsContainer productId={product.id} />
+
             </div>
         );
     }

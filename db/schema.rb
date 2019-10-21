@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_011914) do
+ActiveRecord::Schema.define(version: 2019_10_18_035241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(version: 2019_09_19_011914) do
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["designer_id"], name: "index_products_on_designer_id"
     t.index ["title"], name: "index_products_on_title", unique: true
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "user_id"
+    t.string "product_id"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "shopping_cart_items", force: :cascade do |t|

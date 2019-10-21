@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ShoppingCartItem = ({ shoppingCartItem, deleteShoppingCartItem }) => (
     <div className='shopping-cart-item-all'>
+        {console.log(shoppingCartItem)}
         <img className='shopping-cart-item-img' src={window.images.testd} alt='dress' />
         <div className='shopping-cart-details'>
             <div className='shopping-cart-two'>
