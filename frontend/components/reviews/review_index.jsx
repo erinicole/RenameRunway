@@ -4,7 +4,7 @@ import ReviewtIndexItem from './review_index_item';
 class ReviewIndex extends React.Component {
 
     componentDidMount() {
-        this.props.fetchReviews(this.props.productId)
+        this.props.fetchReviewsProducts(this.props.productId)
     }
 
     render() {

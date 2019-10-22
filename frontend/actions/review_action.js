@@ -20,8 +20,14 @@ const removeReview = id => ({
 });
 
 
-export const fetchReviews = (product_id) => dispatch => {
-    return ReviewAPIUtil.fetchReviews(product_id).then(reviews =>
+export const fetchReviewsProducts = (product_id) => dispatch => {
+    return ReviewAPIUtil.fetchReviewsProducts(product_id).then(reviews =>
+      dispatch(recieveReviews(reviews))
+    );
+};
+
+export const fetchReviewsUsers = (user_id) => dispatch => {
+    return ReviewAPIUtil.fetchReviewsUsers(user_id).then(reviews =>
       dispatch(recieveReviews(reviews))
     );
 };

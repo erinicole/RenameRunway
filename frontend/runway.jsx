@@ -6,7 +6,7 @@ import Root from './components/root'
 import { fetchShoppingCartItems } from './actions/shopping_cart_item_actions'
 import { fetchItems } from './actions/item_action'
 import {fetchShoppingCartProducts} from './actions/product_actions'
-import { fetchReviews } from './actions/review_action'
+import { fetchReviewsProducts } from './actions/review_action'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,7 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.logout = logout
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.fetchReviews = fetchReviews;
+    window.fetchReviewsProducts = fetchReviewsProducts;
+    window.testingReviews = (arg) =>{
+        store.dispatch(fetchReviewsProducts(arg))
+    }
     //testinng
 
     const root = document.getElementById('root')

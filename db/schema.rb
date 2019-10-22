@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_18_035241) do
+ActiveRecord::Schema.define(version: 2019_10_22_181530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,13 +57,11 @@ ActiveRecord::Schema.define(version: 2019_10_18_035241) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "user_id"
-    t.string "product_id"
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_reviews_on_product_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.integer "user_id"
+    t.integer "product_id"
   end
 
   create_table "shopping_cart_items", force: :cascade do |t|
@@ -74,6 +72,25 @@ ActiveRecord::Schema.define(version: 2019_10_18_035241) do
     t.integer "item_id"
     t.index ["item_id"], name: "index_shopping_cart_items_on_item_id"
     t.index ["user_id"], name: "index_shopping_cart_items_on_user_id"
+  end
+
+  create_table "shortlist_items", force: :cascade do |t|
+    t.integer "shortlist_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_shortlist_items_on_product_id"
+    t.index ["shortlist_id"], name: "index_shortlist_items_on_shortlist_id"
+  end
+
+  create_table "shortlists", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id"
+    t.integer "shortlist_item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shortlist_item_id"], name: "index_shortlists_on_shortlist_item_id"
+    t.index ["user_id"], name: "index_shortlists_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

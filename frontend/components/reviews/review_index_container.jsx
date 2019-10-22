@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ReviewIndex from './review_index';
-import { fetchReviews } from '../../actions/review_action';
+import { fetchReviewsProducts } from '../../actions/review_action';
 
 const mapStateToProps = state => {
     // debugger
@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        fetchReviews: (product_id) => dispatch(fetchReviews(product_id))
+        fetchReviewsProducts: (product_id) => dispatch(fetchReviewsProducts(product_id))
     })
 }
 

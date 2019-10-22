@@ -45,5 +45,10 @@ class Product < ApplicationRecord
     foreign_key: :product_id,
     class_name: :Review  
 
+    has_many :shortlist_items,
+    primary_key: :id,
+    foreign_key: :product_id,
+    class_name: :ShortlistItem
+
 
 end

@@ -38,10 +38,16 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :Review
+    
+    has_many :shortlists,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Shortlist
 
     has_many :shopping_cart_products,
     through: :shopping_cart_items,
     source: :products
+
 
 
     def self.find_by_cred(email, password)

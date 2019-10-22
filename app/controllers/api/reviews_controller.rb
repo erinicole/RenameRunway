@@ -1,5 +1,7 @@
 class Api::ReviewsController < ApplicationController
-    # before_action :require_signin
+    before_action :require_signin
+    skip_before_action :require_signin, only: [:index]
+
 
     def create
         @review = Review.new(review_params)
@@ -7,6 +9,7 @@ class Api::ReviewsController < ApplicationController
         @review.product_id = params[:product_id]
         if @review.save
             redirect_to product_url(@review.product_id)
+            console.log('review saved!')
         else
             render json: @review.errors.full_messages, status: 404
         end
@@ -15,8 +18,14 @@ class Api::ReviewsController < ApplicationController
     def index
         # debugger
         #how we get current product?
-        current_product = Product.find(params[:product_id])
-        @reviews = current_product.reviews
+        current_url  = request.env['PATH_INFO']
+        #if includes users or if includes products
+        if current_url.include?('products')
+            current_product = Product.find(params[:product_id])
+            @reviews = current_product.reviews
+        elsif current_url.include?('users')
+            @reviews = current_user.reviews
+        end
         render json: {} unless @reviews
     end
 
