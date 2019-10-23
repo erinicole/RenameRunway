@@ -6,7 +6,7 @@ import Root from './components/root'
 import { fetchShoppingCartItems } from './actions/shopping_cart_item_actions'
 import { fetchItems } from './actions/item_action'
 import {fetchShoppingCartProducts} from './actions/product_actions'
-import { fetchReviewsProducts } from './actions/review_action'
+import { fetchReviewsProducts, fetchReviewsUsers, createReview, updateReview, deleteReview} from './actions/review_action'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -33,10 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.fetchReviewsProducts = fetchReviewsProducts;
-    window.testingReviews = (arg) =>{
+    window.fetchReviewsUsers = fetchReviewsUsers;
+    window.createReview = createReview;
+    window.updateReview = updateReview;
+    window.deleteReview = deleteReview;
+    window.testingReviewsProducts = (arg) => {
         store.dispatch(fetchReviewsProducts(arg))
-    }
-    //testinng
+    };
+    window.testingReviewsUsers = (arg) => {
+        store.dispatch(fetchReviewsUsers(arg))
+    };
+    //testing
 
     const root = document.getElementById('root')
     ReactDOM.render(<Root store={store}/>, root)
