@@ -30,7 +30,6 @@ class Api::ReviewsController < ApplicationController
     end
 
     def update
-        debugger
         # current_product = Product.find(params[:product_id])
         # @review = current_product.find(params[:id])
         @review = Review.find(params[:id])

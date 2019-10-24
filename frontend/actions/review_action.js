@@ -39,10 +39,9 @@ export const createReview = review => dispatch => {
        };
 
 export const updateReview = review => dispatch => {
-         return ReviewAPIUtil.updateReview(review).then(updatedReview =>{
-          debugger
-           return dispatch(recieveReview(updatedReview));
-         });
+         return ReviewAPIUtil.updateReview(review).then(updatedReview =>
+          dispatch(recieveReview(updatedReview))
+         );
        };
 
 export const deleteReview = id => dispatch => {

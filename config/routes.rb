@@ -15,8 +15,8 @@ Rails.application.routes.draw do
     resources :shopping_cart_items, only: [:create, :index, :destroy]
     resources :items, only: [ :show, :index, :update]
     resources :reviews, only: [ :create , :update, :destroy]
-    resources :shortlists, only: [:create, :index, :destroy]
-    resources :shortlist_items, only: [ :show, :index, :update]
+    resources :shortlists, only: [:create, :index, :update, :destroy]
+    resources :shortlist_items, only: [:index, :destroy]
 
   end  
 
