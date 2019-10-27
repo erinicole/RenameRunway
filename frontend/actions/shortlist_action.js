@@ -21,7 +21,8 @@ const removeShortlist = id => ({
 
 export const fetchShortlists = () => dispatch => {
   return ShortlistAPIUtil.fetchShortlists().then(shortlists =>
-    dispatch(recieveShortlists(shortlists))
+    { 
+    return dispatch(recieveShortlists(shortlists))}
   );
 };
 

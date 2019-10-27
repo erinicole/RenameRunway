@@ -24,6 +24,6 @@ export const updateShortlist = shortlist => {
 export const deleteShortlist = id => {
          return $.ajax({
            method: "DELETE",
-           url: `/api/shortlist/${id}`
+           url: `/api/shortlists/${id}`
          });
        };

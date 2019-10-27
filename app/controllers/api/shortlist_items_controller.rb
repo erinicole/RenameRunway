@@ -1,6 +1,12 @@
 class Api::ShortlistItemsController < ApplicationController
     def index
-        @items = ShortlistItem.where(product_id: params[:product_id])
+        debugger
+        current_shortlist = Shortlist.find(params[:shortlist_id])
+        @shortlist_items = current_shortlist.shortlist_items
+        # @shortlist_items = ShortlistItem.where(product_id: params[:product_id])
+        debugger
+        render json: @shortlist_items 
+
     end
 
     def destroy

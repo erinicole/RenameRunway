@@ -13,8 +13,8 @@ const removeShortlistItem = id => ({
   shortlistItemId: id
 });
 
-export const fetchShortlistItems = product_id => dispatch => {
-  return ShortlistItemIUtil.fetchShortlistItems(product_id).then(
+export const fetchShortlistItems = shortlist_id => dispatch => {
+  return ShortlistItemIUtil.fetchShortlistItems(shortlist_id).then(
     shortlist_items => dispatch(recieveShortlistItems(shortlist_items))
   );
 };

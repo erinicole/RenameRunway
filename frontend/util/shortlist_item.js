@@ -1,7 +1,7 @@
-export const fetchShortlistItems = product_id => {
+export const fetchShortlistItems = shortlist_id => {
   return $.ajax({
     method: "GET",
-    url: `/api/shortlist_items?product_id=${product_id}`
+    url: `/api/shortlists/${shortlist_id}/shortlist_items`
   });
 };
 

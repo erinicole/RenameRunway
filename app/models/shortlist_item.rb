@@ -11,9 +11,9 @@
 
 class ShortlistItem < ApplicationRecord
 
-    has_many :shortlists,
+    belongs_to :shortlist,
     primary_key: :id,
-    foreign_key: :shortlist_item_id,
+    foreign_key: :shortlist_id,
     class_name: :Shortlist
 
     belongs_to :product,

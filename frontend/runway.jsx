@@ -6,7 +6,10 @@ import Root from './components/root'
 import { fetchShoppingCartItems } from './actions/shopping_cart_item_actions'
 import { fetchItems } from './actions/item_action'
 import {fetchShoppingCartProducts} from './actions/product_actions'
-import { fetchReviewsProducts, fetchReviewsUsers, createReview, updateReview, deleteReview} from './actions/review_action'
+import { fetchShortlistItems, deleteShortlistItem } from './actions/shortlist_item_action'
+import { fetchShortlists, createShortlist, updateShortlist, deleteShortlist } from './actions/shortlist_action'
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,11 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.logout = logout
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.fetchReviewsProducts = fetchReviewsProducts;
-    window.fetchReviewsUsers = fetchReviewsUsers;
-    window.createReview = createReview;
-    window.updateReview = updateReview;
-    window.deleteReview = deleteReview;
+    window.fetchShortlistItems = fetchShortlistItems
+    window.deleteShortlistItem = deleteShortlistItem
+    window.fetchShortlists = fetchShortlists
+    window.createShortlist = createShortlist
+    window.updateShortlist = updateShortlist
+    window.deleteShortlist = deleteShortlist
     window.testingReviewsProducts = (arg) => {
         store.dispatch(fetchReviewsProducts(arg))
     };

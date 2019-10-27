@@ -3,14 +3,16 @@ class Api::ShortlistsController < ApplicationController
 
     def create
          @shortlist = Shortlist.new(shortlist_params)
-                # debugger
-        unless @shortlist_params.save
-            render json: @shortlist_params.errors.full_messages, status: 404
+        if @shortlist.save
+            render json: @shortlist
+        else
+            render json: @shortlist.errors.full_messages, status: 404
         end
     end
 
     def index
         @shortlists = current_user.shortlists
+        render json: @shortlists 
     end
 
     def update
@@ -26,10 +28,11 @@ class Api::ShortlistsController < ApplicationController
     def destroy
         shortlist = Shortlist.find(params[:id])
         shortlist.destroy
+        render json: shortlist.id #have to return the id to give back to the front end
     end
 
     def shortlist_params
-        params.require(:item).permit(:title, :user_id)
+        params.require(:shortlist).permit(:title, :user_id)
     end
     
 end
