@@ -6,6 +6,7 @@ export const fetchReviewsProducts = (product_id) => {
 };
 
 export const fetchReviewsUsers = (user_id) => {
+  
   return $.ajax({
     method: "GET",
     url: `/api/users/${user_id}/reviews`

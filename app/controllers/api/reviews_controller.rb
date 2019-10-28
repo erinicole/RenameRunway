@@ -27,6 +27,7 @@ class Api::ReviewsController < ApplicationController
             @reviews = current_user.reviews
         end
         render json: {} unless @reviews
+        # render json: @reviews
     end
 
     def update

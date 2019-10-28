@@ -19,6 +19,11 @@ class ReviewIndex extends React.Component {
 
         return (
             <div className='reviews-entire-container'>
+                <div className='reviews-header'>
+                    {reviews.length} reviews
+                    <br/>
+                    ****
+                </div>
                 {reviews}
             </div>
         );
