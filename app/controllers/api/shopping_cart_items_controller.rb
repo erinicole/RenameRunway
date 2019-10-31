@@ -3,15 +3,21 @@ class Api::ShoppingCartItemsController < ApplicationController
 
     def create
         @shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)
-                # debugger
+        @shopping_cart_item.user_id = current_user.id
+        @shopping_cart_item.item_id = shopping_cart_item_params[:item_id]
 
-        unless @shopping_cart_item.save
+        if @shopping_cart_item.save
+            render :show
+        else
             render json: @shopping_cart_item.errors.full_messages, status: 404
         end
-        # render :show
+        # unless @shopping_cart_item.save
+        #     render json: @shopping_cart_item.errors.full_messages, status: 404
+        # end
     end
     #retrieving all of the current user  items,  not just all items
     def index
+        debugger
         @shopping_cart_items = current_user.shopping_cart_items
         render json: {} unless @shopping_cart_items
     end

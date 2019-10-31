@@ -49,7 +49,7 @@ class Api::ReviewsController < ApplicationController
         # review = current_product.reviews.find(params[:id])
         review = Review.find(params[:id])
         review.destroy
-        # redirect_to product_url(review.product_id)
+        render json: review.id
     end
 
     private
